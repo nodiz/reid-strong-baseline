@@ -26,7 +26,7 @@ _C.MODEL.NAME = 'resnet50'
 # Last stride of backbone
 _C.MODEL.LAST_STRIDE = 1
 # Path to pretrained model of backbone
-_C.MODEL.PRETRAIN_PATH = 'E:\MSMT17\msmt17\reid-strong-baseline\data\MSMT17_V1'
+_C.MODEL.PRETRAIN_PATH = '' #/home/fabien/.cache/torch/checkpoints/resnet50-19c8e357.pth
 # Use ImageNet pretrained model to initialize backbone or use self trained model to initialize the whole model
 # Options: 'imagenet' or 'self'
 _C.MODEL.PRETRAIN_CHOICE = 'imagenet'
@@ -68,9 +68,9 @@ _C.INPUT.PADDING = 10
 # -----------------------------------------------------------------------------
 _C.DATASETS = CN()
 # List of the dataset names for training, as present in paths_catalog.py
-_C.DATASETS.NAMES = ('market1501')
+_C.DATASETS.NAMES = ('msmt17')
 # Root directory where datasets should be used (and downloaded if not found)
-_C.DATASETS.ROOT_DIR = ('./data')
+_C.DATASETS.ROOT_DIR = ('./data/')
 
 # -----------------------------------------------------------------------------
 # DataLoader
@@ -90,7 +90,7 @@ _C.SOLVER = CN()
 # Name of optimizer
 _C.SOLVER.OPTIMIZER_NAME = "Adam"
 # Number of max epoches
-_C.SOLVER.MAX_EPOCHS = 50
+_C.SOLVER.MAX_EPOCHS = 200
 # Base learning rate
 _C.SOLVER.BASE_LR = 3e-4
 # Factor of learning bias

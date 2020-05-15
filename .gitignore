@@ -2,11 +2,11 @@
 data/market1501
 data/dukemtmc-reid
 data/MSMT17
-log/
+logs/
 saved-models/
 train_imagenet.py
 .idea/
-
+models/
 # OS X
 .DS_Store
 .Spotlight-V100
