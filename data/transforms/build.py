@@ -15,7 +15,7 @@ def build_transforms(cfg, is_train=True):
         transform = T.Compose([
             T.Resize(cfg.INPUT.SIZE_TRAIN),
             T.RandomHorizontalFlip(p=cfg.INPUT.PROB),
-            T.ColorJitter(brightness=[0.3,0.7], contrast=[0.3,0.7], saturation=[0.3,0.7], hue=[-0.5,0.5]),
+            T.ColorJitter(brightness=1.0, contrast=[0.1,1.0], saturation=[0.5,1.0], hue=[-0.5,0.5]), #values based on jupyter notebook
             T.Pad(cfg.INPUT.PADDING),
             T.RandomCrop(cfg.INPUT.SIZE_TRAIN),
             T.ToTensor(),
