@@ -1,7 +1,7 @@
 # Custom
 data/market1501
 data/dukemtmc-reid
-data/MSMT17
+data/MSMT17_V1
 logs/
 saved-models/
 train_imagenet.py
