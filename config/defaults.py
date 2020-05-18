@@ -22,7 +22,7 @@ _C.MODEL.DEVICE = "cuda"
 # ID number of GPU
 _C.MODEL.DEVICE_ID = '0'
 # Name of backbone
-_C.MODEL.NAME = 'resnet50'
+_C.MODEL.NAME = 'resnet50_ibn_a'
 # Last stride of backbone
 _C.MODEL.LAST_STRIDE = 1
 # Path to pretrained model of backbone
