@@ -56,17 +56,17 @@ class ImageErasing(object):
                 if img.size()[0] == 3:
                     img_nb = round(random.uniform(0, self.len_car_imgs-1))
                     car_path = self.car_imgs[img_nb]
-                    print(car_path)
                     img_car = np.asarray(Image.open(car_path).convert('RGB')) / 255
-                    print(img_car.shape)
+                    
                     # cropping borders and upper half
                     img_car_h, img_car_w = img_car.shape[:2]
                     img_car = img_car[img_car_h // 2:img_car_h // 10 * 9, img_car_w // 20:img_car_w // 20 * 19, :]
                     img_car_h, img_car_w = img_car.shape[:2]
-                    print(img_car.shape)
-                    print(img_car_h, img_car_w)
-                    print(h, w)
+  
                     # cropping random bbox from image
+                    if img_car_h <= h or img_car_w <= w:
+                        continue # skip if cropping region bigger than image
+                        
                     y1_car = random.randint(0, img_car_h - h)
                     x1_car = random.randint(0, img_car_w - w)
                     img_car = img_car[y1_car:y1_car + h, x1_car:x1_car + w, :]
