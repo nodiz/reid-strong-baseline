@@ -19,8 +19,9 @@ def build_transforms(cfg, is_train=True):
             T.Pad(cfg.INPUT.PADDING),
             T.RandomCrop(cfg.INPUT.SIZE_TRAIN),
             T.ToTensor(),
-            normalize_transform,
-            RandomErasing(probability=cfg.INPUT.RE_PROB, mean=cfg.INPUT.PIXEL_MEAN)
+            RandomErasing(probability=cfg.INPUT.RE_PROB, mean=cfg.INPUT.PIXEL_MEAN),
+            normalize_transform
+           
         ])
     else:
         transform = T.Compose([
