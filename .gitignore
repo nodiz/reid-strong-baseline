@@ -118,4 +118,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
-/cars_/
+/cars_/*

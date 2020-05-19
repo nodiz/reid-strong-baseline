@@ -6,9 +6,6 @@
 
 import math
 import random
-import numpy as np
-from PIL import Image
-import torch
 
 
 class RandomErasing(object):
@@ -36,7 +33,6 @@ class RandomErasing(object):
             return img
 
         for attempt in range(100):
-            
             area = img.size()[1] * img.size()[2]
 
             target_area = random.uniform(self.sl, self.sh) * area
@@ -48,18 +44,10 @@ class RandomErasing(object):
             if w < img.size()[2] and h < img.size()[1]:
                 x1 = random.randint(0, img.size()[1] - h)
                 y1 = random.randint(0, img.size()[2] - w)
-
                 if img.size()[0] == 3:
-                    img_nb = round(random.uniform(1, 4))
-                    path = 'photocars/cars'+str(img_nb)+'.jpeg'
-                    img_cars =np.asarray(Image.open(path).convert('RGB'))/255
-                    img_cars = torch.from_numpy(np.reshape(img_cars, (3, img_cars.shape[1], img_cars.shape[0])))
-
-                    #print(img_nb, '   ', img_cars.size(), '      ', img.size())
-
-                    img[0, x1:x1 + h, y1:y1 + w] = img_cars[0, x1:x1 + h, y1:y1 + w]    # self.mean[0]
-                    img[1, x1:x1 + h, y1:y1 + w] = img_cars[1, x1:x1 + h, y1:y1 + w]    # self.mean[1]
-                    img[2, x1:x1 + h, y1:y1 + w] = img_cars[2, x1:x1 + h, y1:y1 + w]    # self.mean[2]
+                    img[0, x1:x1 + h, y1:y1 + w] = self.mean[0]
+                    img[1, x1:x1 + h, y1:y1 + w] = self.mean[1]
+                    img[2, x1:x1 + h, y1:y1 + w] = self.mean[2]
                 else:
                     img[0, x1:x1 + h, y1:y1 + w] = self.mean[0]
                 return img
