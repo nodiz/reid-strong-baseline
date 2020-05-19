@@ -70,7 +70,7 @@ class ImageErasing(object):
 
                     # patching it to the image
                     img_car = np.transpose(img_car, (2, 0, 1))
-                    img[:, x1:x1 + h, y1:y1 + w] = img_car[:, :, :]
+                    img[:, x1:x1 + h, y1:y1 + w] = torch.from_numpy(img_car)[:, :, :]
                     
                 else:
                     img[:, x1:x1 + h, y1:y1 + w] = self.mean[:]
