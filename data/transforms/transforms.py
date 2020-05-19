@@ -57,9 +57,9 @@ class RandomErasing(object):
 
                     #print(img_nb, '   ', img_cars.size(), '      ', img.size())
 
-                    img[0, x1:x1 + h, y1:y1 + w] = img_cars[0, x1:x1 + h, y1:y1 + w] #self.mean[0]
-                    img[1, x1:x1 + h, y1:y1 + w] = img_cars[1, x1:x1 + h, y1:y1 + w] #self.mean[1]
-                    img[2, x1:x1 + h, y1:y1 + w] = img_cars[2, x1:x1 + h, y1:y1 + w] #self.mean[2]
+                    img[0, x1:x1 + h, y1:y1 + w] = img_cars[0, x1:x1 + h, y1:y1 + w]    # self.mean[0]
+                    img[1, x1:x1 + h, y1:y1 + w] = img_cars[1, x1:x1 + h, y1:y1 + w]    # self.mean[1]
+                    img[2, x1:x1 + h, y1:y1 + w] = img_cars[2, x1:x1 + h, y1:y1 + w]    # self.mean[2]
                 else:
                     img[0, x1:x1 + h, y1:y1 + w] = self.mean[0]
                 return img

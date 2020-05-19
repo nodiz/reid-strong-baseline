@@ -26,9 +26,9 @@ class MSMT17(BaseImageDataset):
     # images: 32621 (train) + 11659 (query) + 82161 (gallery)
     # cameras: 15
     """
-    dataset_dir = 'MSMT17_V1'
+    dataset_dir = 'msmst'
 
-    def __init__(self,root='/scratch/fbenoist/reid-strong-baseline/data', verbose=True, **kwargs):
+    def __init__(self, root='/Users/nodiz/Desktop/', verbose=True, **kwargs):
         super(MSMT17, self).__init__()
         self.dataset_dir = osp.join(root, self.dataset_dir)
         self.train_dir = osp.join(self.dataset_dir, 'train')
