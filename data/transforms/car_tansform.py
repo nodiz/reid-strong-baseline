@@ -54,7 +54,7 @@ class ImageErasing(object):
                 y1 = random.randint(0, img.size()[2] - w)
 
                 if img.size()[0] == 3:
-                    img_nb = round(random.uniform(self.len_imgs))
+                    img_nb = round(random.uniform(self.len_car_imgs))
                     car_path = self.car_imgs[img_nb]
                     img_car = np.asarray(Image.open(car_path).convert('RGB')) / 255
 
