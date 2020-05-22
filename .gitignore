@@ -1,11 +1,12 @@
 # Custom
 data/market1501
 data/dukemtmc-reid
-log/
+data/MSMT17_V1
+logs/
 saved-models/
 train_imagenet.py
 .idea/
-
+models/
 # OS X
 .DS_Store
 .Spotlight-V100
@@ -117,3 +118,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+/cars_/*
