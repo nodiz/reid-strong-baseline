@@ -227,15 +227,15 @@ python3 tools/test.py --config_file='configs/softmax_triplet_with_center.yml' MO
 python3 tools/test.py --config_file='configs/softmax_triplet_with_center.yml' MODEL.DEVICE_ID "('your device id')" DATASETS.NAMES "('dukemtmc')" TEST.NECK_FEAT "('after')" TEST.FEAT_NORM "('yes')" MODEL.PRETRAIN_CHOICE "('self')" TEST.RE_RANKING "('yes')" TEST.WEIGHT "('your path to trained checkpoints')"
 ```
 
-## Added (from fork)
+## Our contribution (from fork)
 
 We provided a stronger data augmentation on the images:
--the people luminosity, saturation, hue are augmented
--in folder cars_ you can add images of possible occlusions related to your use case (i.e. cars), they will be discretely superposed to the loaded images when training
+* the people luminosity, saturation, hue are augmented
+* in folder cars_ you can add images of possible occlusions related to your use case (i.e. cars), they will be discretely superposed to the loaded images when training
 
 <div align=center>
 <img src='imgs/data-augm.png' width='800'>
 </div>
 
-Training on the msmt17 dataset we achieved Rank-1: 75.4 and mAP: 46.5 which places 4th on the papers with code [leaderboard for this dataset](https://paperswithcode.com/sota/person-re-identification-on-msmt17). We have no doubt that with some tweaking or further training, top 3 could also be achieved.
 
+Training on the msmt17 dataset we achieved Rank-1: 75.4 and mAP: 46.5 which places 4th on the papers with code [leaderboard for this dataset](https://paperswithcode.com/sota/person-re-identification-on-msmt17)
