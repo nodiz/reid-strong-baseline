@@ -189,7 +189,7 @@ You can run these commands in  `.sh ` files for training different datasets of d
 1. Msmt17, cross entropy + triplet loss + center los 
 
 ```bash
-python3 tools/train.py --config_file='configs/softmax_triplet_with_center.yml' DATASETS.NAMES "('msmt17')" OUTPUT_DIR "('./logs/data_augment')" SOLVER.IMS_PER_BATCH  "(8)" SOLVER.EVAL_PERIOD "(120)" SOLVER.CHECKPOINT_PERIOD "(10)
+python3 tools/train.py --config_file='configs/softmax_triplet_with_center.yml' DATASETS.NAMES "('msmt17')" OUTPUT_DIR "('./logs')" SOLVER.IMS_PER_BATCH  "(128)" SOLVER.EVAL_PERIOD "(15)" SOLVER.CHECKPOINT_PERIOD "(10)
 ```
 
 
