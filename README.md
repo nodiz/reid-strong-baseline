@@ -186,13 +186,20 @@ The designed architecture follows this guide [PyTorch-Project-Template](https://
 ## Train
 You can run these commands in  `.sh ` files for training different datasets of differernt loss.  You can also directly run code `sh *.sh` to run our demo after your custom modification.
 
-1. Market1501, cross entropy loss + triplet loss
+1. Msmt17, cross entropy + triplet loss + center los 
+
+```bash
+python3 tools/train.py --config_file='configs/softmax_triplet_with_center.yml' DATASETS.NAMES "('msmt17')" OUTPUT_DIR "('./logs/data_augment')" SOLVER.IMS_PER_BATCH  "(8)" SOLVER.EVAL_PERIOD "(120)" SOLVER.CHECKPOINT_PERIOD "(10)
+```
+
+
+2. Market1501, cross entropy loss + triplet loss
 
 ```bash
 python3 tools/train.py --config_file='configs/softmax_triplet.yml' MODEL.DEVICE_ID "('your device id')" DATASETS.NAMES "('market1501')" OUTPUT_DIR "('your path to save checkpoints and logs')"
 ```
 
-2. DukeMTMC-reID, cross entropy loss + triplet loss + center loss
+3. DukeMTMC-reID, cross entropy loss + triplet loss + center loss
 
 
 ```bash
