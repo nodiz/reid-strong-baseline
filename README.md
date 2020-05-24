@@ -239,3 +239,5 @@ We provided a stronger data augmentation on the images:
 
 
 Training on the msmt17 dataset we achieved Rank-1: 75.4 and mAP: 46.5 which places 4th on the papers with code [leaderboard for this dataset](https://paperswithcode.com/sota/person-re-identification-on-msmt17)
+
+Pretrained models can be downloaded here: [IBN-Net-a](https://drive.google.com/drive/folders/1eq2Zpr2kn9FgAwpxDOl7eHaaHXa-m5lv?usp=sharing)
