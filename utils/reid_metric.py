@@ -48,6 +48,7 @@ class R1_mAP(Metric):
                   torch.pow(gf, 2).sum(dim=1, keepdim=True).expand(n, m).t()
         distmat.addmm_(1, -2, qf, gf.t())
         distmat = distmat.cpu().numpy()
+        print(distmat)
         cmc, mAP = eval_func(distmat, q_pids, g_pids, q_camids, g_camids)
 
         return cmc, mAP
@@ -92,7 +93,7 @@ class R1_mAP_reranking(Metric):
         # distmat = distmat.cpu().numpy()
         print("Enter reranking")
         distmat = re_ranking(qf, gf, k1=20, k2=6, lambda_value=0.3)
-        print(distmat)
+ 
         cmc, mAP = eval_func(distmat, q_pids, g_pids, q_camids, g_camids)
 
         return cmc, mAP
